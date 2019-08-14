@@ -5,6 +5,9 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
+import { connect } from 'react-redux';
+import { buyItem } from './actions';
+ 
 const App = () => {
   const state = {
     additionalPrice: 0,
@@ -45,4 +48,15 @@ const App = () => {
   );
 };
 
-export default App;
+
+const mapStateToProps = state => {
+  console.log('state', state);
+  return {
+  
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { buyItem }
+)(App);
